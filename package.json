@@ -1,0 +1,27 @@
+{
+  "name": "pruv",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pruv — Zero-knowledge trust layer for Solana dApps",
+  "scripts": {
+    "build:programs": "anchor build",
+    "test:programs": "anchor test --skip-local-validator",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "clean": "anchor clean && pnpm -r exec rm -rf dist node_modules/.cache"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "ts-mocha": "^10.0.0",
+    "mocha": "^10.0.0",
+    "@types/mocha": "^10.0.0",
+    "chai": "^4.3.10",
+    "@types/chai": "^4.3.11"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.2.1"
+}
