@@ -1,0 +1,20 @@
+[package]
+name = "pruv-attestation"
+version = "0.1.0"
+edition = "2021"
+description = "Pruv attestation — multi-signature trust attestation storage and lifecycle"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pruv_attestation"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang    = { workspace = true }
+solana-program = { workspace = true }

@@ -1,0 +1,20 @@
+[package]
+name = "pruv-lottery"
+version = "0.1.0"
+edition = "2021"
+description = "pruv daily lottery — node-consensus randomness, on-chain prize distribution"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pruv_lottery"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+# init-if-needed required for WalletTicketCount PDA
+anchor-lang = { workspace = true, features = ["init-if-needed"] }

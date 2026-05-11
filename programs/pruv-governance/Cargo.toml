@@ -1,0 +1,20 @@
+[package]
+name = "pruv-governance"
+version = "0.1.0"
+edition = "2021"
+description = "Pruv governance — privacy-preserving DAO voting with ZK proof verification"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pruv_governance"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang    = { workspace = true }
+solana-program = { workspace = true }

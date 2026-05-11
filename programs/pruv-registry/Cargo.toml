@@ -1,0 +1,20 @@
+[package]
+name = "pruv-registry"
+version = "0.1.0"
+edition = "2021"
+description = "Pruv dApp registry — code hash tracking and subscription management"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pruv_registry"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+anchor-spl = { workspace = true }
