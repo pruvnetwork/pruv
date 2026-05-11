@@ -1,0 +1,8 @@
+# HELP pruv_p2p_connections_total Total libp2p connections established
+# TYPE pruv_p2p_connections_total counter
+pruv_p2p_connections_total 1
+
+# HELP pruv_p2p_peers_connected Current number of connected libp2p peers
+# TYPE pruv_p2p_peers_connected gauge
+pruv_p2p_peers_connected 1
+

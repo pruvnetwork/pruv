@@ -1,0 +1,10 @@
+# TYPE pruv_p2p_heartbeats_received_total counter
+pruv_p2p_heartbeats_received_total 1
+
+# HELP pruv_p2p_heartbeats_total Total gossip heartbeats published by this node
+# TYPE pruv_p2p_heartbeats_total counter
+pruv_p2p_heartbeats_total 1
+
+# TYPE pruv_p2p_gossip_mesh_size gauge
+pruv_p2p_gossip_mesh_size 1
+
