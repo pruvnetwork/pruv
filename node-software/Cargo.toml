@@ -1,0 +1,78 @@
+[package]
+name = "pruv-node-daemon"
+version = "0.1.0"
+edition = "2021"
+description = "Pruv node daemon — monitor, prover, attestation coordinator and p2p gossip"
+
+# Standalone workspace so it resolves deps independently from the Anchor programs.
+[workspace]
+
+[lib]
+name    = "pruv_node"
+path    = "src/lib.rs"
+
+[[bin]]
+name = "pruv-node"
+path = "src/main.rs"
+
+[dependencies]
+# Async runtime
+tokio          = { version = "1", features = ["full"] }
+
+# Solana client
+solana-client                       = "2.2"
+solana-sdk                          = "2.2"
+solana-account-decoder-client-types = "2.2"
+
+# ZK circuits (local path — package name is "pruv-circuits", aliased as "circuits")
+circuits       = { package = "pruv-circuits", path = "../circuits" }
+
+# P2P networking
+libp2p         = { version = "0.53", features = [
+    "tokio", "tcp", "noise", "yamux", "gossipsub", "mdns", "identify", "macros",
+]}
+futures        = "0.3"
+
+# Serialisation
+serde          = { version = "1", features = ["derive"] }
+serde_json     = "1"
+bincode        = "1"
+hex            = "0.4"
+borsh          = "0.10"
+
+# Crypto
+ed25519-dalek  = { version = "2", features = ["serde"] }
+rand           = "0.8"
+sha2           = "0.10"
+bs58           = "0.5"
+aes-gcm        = "0.10"
+pbkdf2         = "0.12"
+
+# Config / logging
+config         = "0.14"
+tracing        = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dotenv         = "0.15"
+
+# HTTP (node metrics endpoint)
+axum           = "0.7"
+tokio-metrics  = { version = "0.3", features = ["rt"] }
+
+# Prometheus metrics
+metrics                     = "0.23"
+metrics-exporter-prometheus = "0.15"
+
+# Proof cache
+rusqlite       = { version = "0.31", features = ["bundled"] }
+
+# CPU count (for proof worker semaphore sizing)
+num_cpus       = "1"
+
+# Error handling
+anyhow         = "1"
+thiserror      = "1"
+
+[dev-dependencies]
+tokio-test     = "0.4"
+tempfile       = "3"
+ureq           = "2"
