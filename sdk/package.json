@@ -1,0 +1,22 @@
+{
+  "name": "@pruv/sdk",
+  "version": "0.1.0",
+  "description": "Pruv TypeScript SDK — connect dApps to the Pruv trust network",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.91.8",
+    "axios": "^1.6.8",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
